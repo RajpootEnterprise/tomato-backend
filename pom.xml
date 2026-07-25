@@ -63,6 +63,13 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- Stripe Payments -->
+        <dependency>
+            <groupId>com.stripe</groupId>
+            <artifactId>stripe-java</artifactId>
+            <version>25.10.0</version>
+        </dependency>
+
         <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>

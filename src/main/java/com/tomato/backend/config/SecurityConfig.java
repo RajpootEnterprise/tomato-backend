@@ -45,6 +45,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/contact/**").permitAll()
                         .requestMatchers("GET", "/api/menu/**").permitAll()
                         .requestMatchers("/actuator/health").permitAll()
+                        // Restricted Admin endpoints
+                        .requestMatchers("/api/admin/**").hasRole("ADMIN")
                         // Everything else (cart, orders, admin menu writes) requires a valid JWT
                         .anyRequest().authenticated()
                 )
