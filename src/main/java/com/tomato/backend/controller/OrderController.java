@@ -48,4 +48,11 @@ public class OrderController {
         Order updated = orderService.updateOrderStatus(orderId, body.get("status"));
         return ResponseEntity.ok(ApiResponse.success("Order status updated", updated));
     }
+
+    @GetMapping("/admin")
+    public ResponseEntity<ApiResponse<List<Order>>> getAllOrders() {
+        // In a real app, restrict this to admins via role check
+        List<Order> orders = orderService.getAllOrders();
+        return ResponseEntity.ok(ApiResponse.success("All orders fetched", orders));
+    }
 }

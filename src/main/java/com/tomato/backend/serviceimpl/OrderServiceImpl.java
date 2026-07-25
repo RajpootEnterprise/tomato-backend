@@ -80,4 +80,9 @@ public class OrderServiceImpl implements OrderService {
         order.setStatus(status);
         return orderRepository.save(order);
     }
+
+    @Override
+    public List<Order> getAllOrders() {
+        return orderRepository.findAllByOrderByCreatedAtDesc();
+    }
 }
