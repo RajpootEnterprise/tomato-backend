@@ -12,5 +12,5 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
 # Render sets $PORT automatically; application.properties reads it
-EXPOSE 8080
+EXPOSE 10000
 ENTRYPOINT ["java", "-jar", "app.jar"]
